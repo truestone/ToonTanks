@@ -23,4 +23,9 @@ APawnBase::APawnBase()
     ProjectileSpawnPoint->SetupAttachment(TurretMesh);
 }
 
+void APawnBase::HandleDestruction()
+{
+}
+
+
 
