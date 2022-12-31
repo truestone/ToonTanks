@@ -7,7 +7,7 @@
 
 void APawnTower::CheckFireCondition()
 {
-    if (!PlayerPawn)
+    if (!PlayerPawn || !PlayerPawn->GetIsPlayerAlive())
     {
         return;
     }

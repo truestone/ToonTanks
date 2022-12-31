@@ -33,6 +33,7 @@ private:
     float RotateSpeed = 100.0f;
 
     APlayerController* PlayerControllerRef;
+    bool bIsPlayerAlive = true;
 
     void CalculateMoveInput(float Value);
     void CalcaulateRotateInput(float Value);
@@ -48,6 +49,8 @@ public:
     virtual void Tick(float DeltaTime) override;
 
     virtual void HandleDestruction() override;
+
+    bool GetIsPlayerAlive();
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
