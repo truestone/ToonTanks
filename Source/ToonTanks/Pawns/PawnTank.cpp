@@ -27,8 +27,8 @@ void APawnTank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-    Rotate();
     Move();
+    Rotate();
 
     if (PlayerControllerRef)
     {

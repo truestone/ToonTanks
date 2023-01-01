@@ -7,11 +7,13 @@ void APlayerControllerBase::SetPlayerEnabledState(bool SetPlayerEnabled)
 {
     if (SetPlayerEnabled)
     {
-        GetPawn()->EnableInput(this);
+        if (GetPawn())
+            GetPawn()->EnableInput(this);
     }
     else
     {
-        GetPawn()->DisableInput(this);
+        if (GetPawn())
+            GetPawn()->DisableInput(this);
     }
 
     bShowMouseCursor = SetPlayerEnabled;
