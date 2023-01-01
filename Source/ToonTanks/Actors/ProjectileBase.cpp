@@ -29,7 +29,9 @@ AProjectileBase::AProjectileBase()
 void AProjectileBase::BeginPlay()
 {
 	Super::BeginPlay();
+
     ProjectileMesh->OnComponentHit.AddDynamic(this, &AProjectileBase::OnHit);
+    UGameplayStatics::PlaySoundAtLocation(this, LaunchSound, GetActorLocation());
 }
 
 void AProjectileBase::OnHit(UPrimitiveComponent* HitComponent,
@@ -49,6 +51,7 @@ void AProjectileBase::OnHit(UPrimitiveComponent* HitComponent,
             MyOwner->GetInstigatorController(), this, DamageType);
         UGameplayStatics::SpawnEmitterAtLocation(this,
             HitParticle, GetActorLocation());
+        UGameplayStatics::PlaySoundAtLocation(this, HitSound, GetActorLocation());
     }
 
     Destroy();

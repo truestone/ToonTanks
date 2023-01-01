@@ -32,7 +32,12 @@ private:
 
     UPROPERTY(EditAnywhere, Category = "Effects")
     UParticleSystem* HitParticle;
+    UPROPERTY(EditAnywhere, Category = "Effects")
+    USoundBase* HitSound;
+    UPROPERTY(EditAnywhere, Category = "Effects")
+    USoundBase* LaunchSound;
 
+    // FUNCTIONS
     UFUNCTION()
     void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
         UPrimitiveComponent* OtherComp, FVector NormalImpulse,
