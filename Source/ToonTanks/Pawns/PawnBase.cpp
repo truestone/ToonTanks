@@ -32,6 +32,8 @@ void APawnBase::HandleDestruction()
 {
     UGameplayStatics::SpawnEmitterAtLocation(this, DeathParticle, GetActorLocation());
     UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
+    UGameplayStatics::PlayWorldCameraShake(this, ExplodeShake, 
+        GetActorLocation(), 0, 10000);
 }
 
 void APawnBase::RotateTurret(FVector LookAtTarget)

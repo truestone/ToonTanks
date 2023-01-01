@@ -52,6 +52,8 @@ void AProjectileBase::OnHit(UPrimitiveComponent* HitComponent,
         UGameplayStatics::SpawnEmitterAtLocation(this,
             HitParticle, GetActorLocation());
         UGameplayStatics::PlaySoundAtLocation(this, HitSound, GetActorLocation());
+        UGameplayStatics::PlayWorldCameraShake(this,
+            HitShake, GetActorLocation(), 0, 10000);
     }
 
     Destroy();
